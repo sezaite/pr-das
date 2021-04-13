@@ -45,7 +45,7 @@ class MemberController extends Controller
             'member_name' => ['required'],
             'member_surname' => ['required'],
             'member_city' => ['required'],
-            'member_experience' => ['required', 'integer', 'integer', 'min:1', 'max:100'],
+            'member_experience' => ['required', 'integer', 'min:1', 'max:100'],
             'member_year' => ['required', 'min:1980', 'integer', 'max:2021'],
             'member_notes' => ['max:5000']
         ],

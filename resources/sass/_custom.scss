@@ -1,0 +1,35 @@
+body,
+body * {
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+  box-sizing: border-box;
+  font-family: $main-font;
+  color: $main-light-color;
+}
+
+body {
+    background-color: darken($main-color, 30%);
+}
+
+a { 
+    color: $main-light-color;
+    line-height: 1;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.highlighted-name {
+    color: $accent-color; 
+}
+.highlighted-main-name {
+    letter-spacing: 1px;
+    color: $accent-color;
+    font-size: 16px;
+   font-family: $title-font;
+    
+}

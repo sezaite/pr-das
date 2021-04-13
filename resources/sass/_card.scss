@@ -1,0 +1,156 @@
+.card {
+    background-color: $main-color;
+    width: 500px;
+    margin: auto;
+    margin-bottom: 60px;
+    border: 2px solid $main-light-color;
+    padding-bottom: 10px;
+
+    
+    &-header {
+        font-size: 20px;
+        font-family: $title-font;
+        border: 2px solid $main-light-color;
+        padding: 10px;
+        margin: 10px;
+        margin-bottom: 0;
+        padding-left: 10px;
+        color: $accent-color;
+    }
+
+    
+
+    &-body {
+        padding: 0 10px;
+
+        //form items
+        .form-group {
+            width: 100%;
+            display: inline-block;
+            padding: 10px;
+            border: 2px solid $main-light-color;
+            margin-top: 10px;
+            
+            label {
+                
+                display: inline-block;
+                font-size: 16px;
+                font-family: $title-font; 
+                
+            }
+
+            input, textarea {
+                width: 100%;
+                display: inline-block;
+                background-color: lighten($main-color, 18%);
+                border: 1px solid $main-color;
+                outline: none;
+                resize: none;
+                margin: 10px 0 6px 0;
+                height: 22px;
+                appearance: none;
+            }
+
+            textarea {
+                height: 150px;
+            }
+
+            small {
+                width: 100%;
+                display: inline-block;
+                font-size: 10px;
+            }
+
+            input:focus, textarea:focus  {
+                background-color: lighten($main-color, 28%);
+                border: none;
+                color: $accent-color;
+                appearance: none;
+            }
+        }
+
+         //index list items
+         .list-item{
+            border: 2px solid $main-light-color;
+            padding: 10px;
+            margin: 10px 0;
+
+            p.list-item-name {
+                display: inline-block;
+                width: 100%;
+                padding: 5px 0;
+                
+            }
+            
+            //form delete button
+            form {
+                display: inline-block;
+            }
+        }
+
+        //select area styling
+
+        .form-group.author {
+            
+            label {
+                display: inline-block;
+                width: 20%;
+            }
+            select {
+                display: inline-block;
+                width: 50%;
+                height: 22px;
+                outline: none;
+                background-color: lighten($main-color, 8%);
+            }
+            select:focus {
+                background-color: lighten($main-color, 22%);
+            }
+        }
+
+        .form-group.author.filter {
+            form {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+
+
+                label {
+                    font-size: 11px;
+                    
+                }
+
+                select {
+                    width: 150px;
+                    height: 25px;
+                }
+
+                button, a {
+                    margin: 0;
+                }
+            }
+        }
+        
+    }
+
+    &-body.log {
+        padding-top: 10px;
+    }
+
+}
+
+@media (max-width: 1000px){
+    .card {
+        width: 400px !important;
+
+        &-body {
+            .form-group.author.filter {
+                form {
+
+                }
+            }
+        }
+    }    
+}

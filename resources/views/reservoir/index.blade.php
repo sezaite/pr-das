@@ -10,10 +10,10 @@
                 <ul>
                 @foreach ($reservoirs as $reservoir)
                 <li class="list-item">
-                <p class="list-item-name">
+                <p class="list-item-name"> 
                     <span class="highlighted-main-name">{{$reservoir->title}}</span>
                     <span style="display: block">Size: 
-                    <span class="highlighted-name">{{$reservoir->area}}.</span></span>
+                    <span class="highlighted-name">{{$reservoir->area}} m<sup class="highlighted-name">2</sup>.</span></span>
                 </p>
                   <a href="{{route('reservoir.edit', [$reservoir])}}" class="btn">EDIT</a>
                   <form method="POST" action="{{route('reservoir.destroy', [$reservoir])}}">

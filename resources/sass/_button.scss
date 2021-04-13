@@ -1,0 +1,60 @@
+.btn {
+    display: inline-block;
+    // width: 80px;
+    border: 1px solid $main-light-color;
+    padding: 5px 15px;
+    text-align: center;
+    margin: 5px 5px 0 0;
+    background-color: $main-color;
+    line-height: 1;
+    transition: all 0.3s;
+    cursor: pointer;
+    font-family: $title-font; 
+}
+
+button.btn {
+    color: $accent-color;
+    border: 1px solid $accent-color;
+}
+
+.btn:hover {
+    background-color: lighten($main-color, 19%);
+    color: $accent-color;
+}
+
+.form-group.sort, .form-group.filter {
+    border: 2px solid $main-light-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 0;
+
+    label {
+        font-family: $title-font;
+        font-size: 14px;
+    }
+    a, button {
+        width: 80px;
+      
+    }
+
+    .filter {
+        margin-bottom: 0;
+    }
+}
+
+.btn.large-btn {
+    width: 50%;
+    // border: 2px solid $accent-color;
+    margin: 10px 25%;
+}
+
+@media (max-width: 1000px) {
+.btn.clear {
+    display: block;
+    margin-top: 10px !important;
+    width: 100% !important;
+    }
+}
+

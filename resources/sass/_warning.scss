@@ -1,0 +1,22 @@
+.alert {
+    width: 400px;
+    margin: auto;
+    margin-bottom: 10px;
+    border: 1px solid $main-light-color;
+    ul {
+        margin: 10px;
+
+        li {
+            display: inline-block;
+            width: 100%;
+            border: 1px solid $main-light-color;
+            padding: 10px;
+            margin-top: 10px;
+
+        }
+
+        li:first-of-type {
+            margin-top: 0;
+        }
+    }
+}   
