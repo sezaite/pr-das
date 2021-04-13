@@ -37,32 +37,25 @@ class ReservoirController extends Controller
      */
     public function store(Request $request)
      { 
+ 
         $validator = Validator::make($request->all(),
         [
             'reservoir_title' => ['required', 'min:3', 'max:64'],
+            'reservoir_area' => ['required', 'integer', 'min:30', 'max:6400'],
+            'reservoir_about' => ['max:5000']
         ],
         [
-        'reservoir_surname.required' => 'reservuaras butinas'
+             'reservoir_title.required' => 'Title is required',
+             'reservoir_title.min' => 'Title is too short',
+             'reservoir_title.max' => 'Title is too long',
+             'reservoir_area.min' => 'Area is too small',
+             'reservoir_area.max' => 'Area is too big',
+             'reservoir_area.required' => 'Area is required',
+             'reservoir_area.integer' => 'Area size must be a number',
+             'reservoir_about.max' => 'That was long was not it?',
+             
         ]
         );
- 
-    //     $validator = Validator::make($request->all(),
-    //     [
-    //         'reservoir_title' => ['required', 'min:3', 'max:64'],
-    //         // 'reservoir_area' => ['required', 'min:30', 'max:6400'],
-    //         // 'reservoir_about' => ['max:5000']
-    //     ],
-    //     [
-    //          'reservoir_title.required' => 'Title is required',
-    //          'reservoir_title.min' => 'Title is too short',
-    //          'reservoir_title.max' => 'Title is too long'
-    //         //  'reservoir_area.min' => 'Area is too small',
-    //         //  'reservoir_area.max' => 'Area is too big',
-    //         //  'reservoir_area.required' => 'Area is required',
-    //         //  'reservoir_about.max' => 'That was long was not it?',
-             
-    //     ]
-    //     );
         
         if ($validator->fails()) {
             $request->flash();
@@ -112,17 +105,19 @@ class ReservoirController extends Controller
         $validator = Validator::make($request->all(),
         [
             'reservoir_title' => ['required', 'min:3', 'max:64'],
-            'reservoir_area' => ['required', 'min:30', 'max:6400'],
+            'reservoir_area' => ['required', 'integer', 'min:30', 'max:6400'],
             'reservoir_about' => ['max:5000']
         ],
         [
+             'reservoir_title.required' => 'Title is required',
+             'reservoir_title.min' => 'Title is too short',
+             'reservoir_title.max' => 'Title is too long',
              'reservoir_area.min' => 'Area is too small',
              'reservoir_area.max' => 'Area is too big',
              'reservoir_area.required' => 'Area is required',
+             'reservoir_area.integer' => 'Area size must be a number',
              'reservoir_about.max' => 'That was long was not it?',
-             'reservoir_title.required' => 'Title is required',
-             'reservoir_title.min' => 'Title is too short',
-             'reservoir_title.max' => 'Title is too long'
+             
         ]
         );
         
