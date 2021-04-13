@@ -22,7 +22,7 @@
                       <label>About</label> <textarea name="reservoir_about">{{old('reservoir_about', $reservoir->about)}}</textarea> <small class="form-text text-muted">Short description</small></div>
                       <div class="form-group author">
                     @csrf
-                    <button type="submit" class="btn large-btn">EDIT</button>
+                    <button type="submit" class="btn large-btn">SAVE</button>
                 </form>
                </div>
            </div>

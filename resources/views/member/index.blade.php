@@ -10,7 +10,7 @@
                 <ul>
                 @foreach ($members as $member)
                 <li class="list-item">
-                <p class="list-item-name"> <span class="highlighted-main-name">{{$member->name}}</span>
+                <p class="list-item-name"> <span class="highlighted-main-name">{{$member->name}} {{$member->surname}}</span>
                       <span style="display: block">Member of <span class="highlighted-name">{{$member->memberReservoir->title}}</span>.</p>
                   <a href="{{route('member.edit', [$member])}}" class="btn">EDIT</a>
                   <form method="POST" action="{{route('member.destroy', [$member])}}">
