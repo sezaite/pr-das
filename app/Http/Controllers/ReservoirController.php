@@ -14,7 +14,8 @@ class ReservoirController extends Controller
      */
     public function index()
     {
-        //
+        $reservoirs = Reservoir::orderBy('title')->get();
+        return view('reservoir.index', ['reservoirs'=>$reservoirs]);
     }
 
     /**
@@ -96,7 +97,32 @@ class ReservoirController extends Controller
      */
     public function update(Request $request, Reservoir $reservoir)
     {
-        //
+        $validator = Validator::make($request->all(),
+        [
+            'reservoir_title' => ['required', 'min:3', 'max:64'],
+            'reservoir_area' => ['required', 'min:30', 'max:6400'],
+            'reservoir_about' => ['max:5000']
+        ],
+        [
+             'reservoir_area.min' => 'Area is too small',
+             'reservoir_area.max' => 'Area is too big',
+             'reservoir_area.required' => 'Area is required',
+             'reservoir_about.max' => 'That was long was not it?',
+             'reservoir_title.required' => 'Title is required',
+             'reservoir_title.min' => 'Title is too short',
+             'reservoir_title.max' => 'Title is too long'
+        ]
+        );
+        
+        if ($validator->fails()) {
+            $request->flash();
+            return redirect()->back()->withErrors($validator);
+        }
+        $reservoir->title = $request->reservoir_title;
+        $reservoir->area = $request->reservoir_area;
+        $reservoir->about = $request->reservoir_about;
+        $reservoir->save();
+       return redirect()->route('reservoir.index')->with('success_message', 'Changed suncceessttully.');
     }
 
     /**
@@ -107,6 +133,11 @@ class ReservoirController extends Controller
      */
     public function destroy(Reservoir $reservoir)
     {
-        //
+        if($reservoir->reservoirMembers->count()){
+            return redirect()->route('reservoir.index')->with('info_message', 'There are some fishermen left there, stop it.');
+        }
+ 
+        $reservoir->delete();
+        return redirect()->route('reservoir.index')->with('success_message', 'Deletededed successfully.');
     }
 }
