@@ -1,0 +1,112 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Reservoir;
+use Illuminate\Http\Request;
+
+class ReservoirController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        //
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        return view('reservoir.create');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    { 
+        $validator = Validator::make($request->all(),
+        [
+            'reservoir_title' => ['required', 'min:3', 'max:64'],
+            'reservoir_area' => ['required', 'min:30', 'max:6400'],
+            'reservoir_about' => ['max:5000']
+        ],
+        [
+             'reservoir_area.min' => 'Area is too small',
+             'reservoir_area.max' => 'Area is too big',
+             'reservoir_area.required' => 'Area is required',
+             'reservoir_about.max' => 'That was long was not it?',
+             'reservoir_title.required' => 'Title is required',
+             'reservoir_title.min' => 'Title is too short',
+             'reservoir_title.max' => 'Title is too long'
+        ]
+        );
+        
+        if ($validator->fails()) {
+            $request->flash();
+            return redirect()->back()->withErrors($validator);
+        }
+      
+    $reservoir = new Reservoir;
+    $reservoir->title = $request->reservoir_title;
+    $reservoir->area = $request->reservoir_area;
+    $reservoir->about = $request->reservoir_about;
+    $reservoir->save();
+    return redirect()->route('reservoir.index')->with('success_message', 'Added successfully.');
+}
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Reservoir  $reservoir
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Reservoir $reservoir)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Reservoir  $reservoir
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Reservoir $reservoir)
+    {
+        return view('reservoir.edit', ['reservoir' => $reservoir]);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Reservoir  $reservoir
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Reservoir $reservoir)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\Reservoir  $reservoir
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Reservoir $reservoir)
+    {
+        //
+    }
+}
