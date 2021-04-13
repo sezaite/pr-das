@@ -11,7 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-
+    
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -26,7 +26,7 @@
                 <div class="nav-wrap" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-left">
-                        <h3>Pind Pond</h3>
+                        <h3>The Pind Pond</h3>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -47,33 +47,33 @@
                         @else
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                Members
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item btn" href="{{ route('member.index') }}">
-                                    Members List
+                                    Reservoirs
                                 </a>
-                                <a class="dropdown-item btn" href="{{ route('member.create') }}">
-                                    New Member
-                                </a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                Reservoirs
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item btn" href="{{ route('reservoir.index') }}">
-                                    Reservoirs List
-                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item btn" href="{{ route('reservoir.index') }}">
+                                        Reservoirs List
+                                    </a>
                                     <a class="dropdown-item btn" href="{{ route('reservoir.create') }}">
-                                    New Reservoir
-                                </a>
-                            </div>
-                        </li>
-                            
+                                        New Reservoir
+                                    </a>
+                                </div>
+                            </li>
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle logged" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    Members
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item btn" href="{{ route('member.index') }}">
+                                        Members List
+                                    </a>
+                                        <a class="dropdown-item btn" href="{{ route('member.create') }}">
+                                        New Member
+                                    </a>
+                                </div>
+                            </li>
+                        
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link logged dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 
@@ -116,13 +116,13 @@
                     <div class="col-md-9">
                         @if(session()->has('success_message'))
                             <div class="alert alert-success" role="alert">
-                                {{session()->get('success_message')}}
+                                <ul><li>{{session()->get('success_message')}}</li></ul>
                             </div>
                         @endif
                        
                         @if(session()->has('info_message'))
                             <div class="alert alert-info" role="alert">
-                                {{session()->get('info_message')}}
+                                <ul><li>{{session()->get('info_message')}}</li></ul>
                             </div>
                         @endif
                     </div>

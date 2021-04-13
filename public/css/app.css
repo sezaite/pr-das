@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;600&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400&display=swap);
 body,
 body * {
   margin: 0;
@@ -33,6 +33,7 @@ li {
   color: #dadada;
   font-size: 16px;
   font-family: "Anton", sans-serif;
+  text-transform: capitalize;
 }
 
 nav {
@@ -53,7 +54,7 @@ nav .nav-wrap {
 nav .nav-wrap .navbar-left h3 {
   color: #b9b7b5;
   font-family: "Anton", sans-serif;
-  font-size: 26px;
+  font-size: 40px;
   width: 300px;
   line-height: 1;
   padding-top: 16px;
@@ -77,6 +78,8 @@ nav .nav-wrap ul.navbar-right .nav-item {
   padding: 15px 0;
   border-top: 1px solid transparent;
   font-size: 16px;
+  font-family: "Anton", sans-serif;
+  margin-bottom: 4px;
 }
 
 nav .nav-wrap ul.navbar-right .nav-item .dropdown-menu {
@@ -104,6 +107,11 @@ nav .nav-wrap ul.navbar-right .nav-item:hover .nav-link {
   color: #dadada;
 }
 
+nav .nav-wrap ul.navbar-right .nav-link {
+  font-family: "Anton", sans-serif;
+  font-size: 14px;
+}
+
 nav .nav-wrap ul.navbar-right .nav-item.log {
   border: none;
 }
@@ -114,6 +122,7 @@ nav .nav-wrap ul.navbar-right .nav-item.log a:hover {
 
 nav .nav-wrap ul.navbar-right a.nav-link.logged {
   color: #53514f;
+  margin-bottom: 5px;
 }
 
 nav .nav-wrap ul.navbar-right .nav-item:hover .dropdown-menu {
@@ -127,6 +136,9 @@ nav .nav-wrap ul.navbar-right .nav-item:hover .dropdown-menu .dropdown-item {
   padding: 10px 0;
   margin: 0;
   margin-top: 12px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
 }
 
 nav .nav-wrap ul.navbar-right .nav-item:hover .dropdown-menu .dropdown-item:hover {
@@ -140,7 +152,7 @@ nav .nav-wrap ul.navbar-right .nav-item:hover .dropdown-menu .dropdown-item:firs
 
 @media (max-width: 1000px) {
   nav .nav-wrap .navbar-left h3 {
-    font-size: 22px;
+    font-size: 32px;
     padding-top: 18px;
     letter-spacing: 1px;
   }
@@ -229,6 +241,7 @@ nav .nav-wrap ul.navbar-right .nav-item:hover .dropdown-menu .dropdown-item:firs
   display: inline-block;
   width: 100%;
   padding: 5px 0;
+  font-size: 12px;
 }
 
 .card-body .list-item form {

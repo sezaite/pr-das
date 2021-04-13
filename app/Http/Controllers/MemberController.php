@@ -14,12 +14,19 @@ class MemberController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $members = Member::orderBy('name')->get();
-        return view('member.index', ['members'=>$members]);
-    }
 
+        $reservoirs = Reservoir::all();
+        if($request->reservoir_id){
+           $members = Member::where('reservoir_id', $request->reservoir_id)->get();
+        } else {
+        $members = Member::all();
+    }
+        $members = $members->sortBy('name');
+        // $members = Member::orderBy('name')->get();
+        return view('member.index', ['members'=>$members, 'reservoirs'=> $reservoirs, 'request' => $request]);
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -45,8 +52,8 @@ class MemberController extends Controller
             'member_name' => ['required'],
             'member_surname' => ['required'],
             'member_city' => ['required'],
-            'member_experience' => ['required', 'integer', 'min:1', 'max:100'],
-            'member_year' => ['required', 'min:1980', 'integer', 'max:2021'],
+            'member_experience' => ['required', 'numeric', 'min:1', 'max:100'],
+            'member_year' => ['required', 'min:1980', 'numeric', 'max:2021'],
             'member_notes' => ['max:5000']
         ],
         [
@@ -60,7 +67,7 @@ class MemberController extends Controller
              'member_year.required' => 'Year is required',
              'member_year.min' => 'The club opened in 1980',
              'member_year.max' => 'Time travelling is illegal',
-             'member_year.integer' => 'Starting date must be a number',
+             'member_year.numeric' => 'Starting date must be a number',
              'member_notes.max' => 'Your poem is a bit too long'
         ]
         );

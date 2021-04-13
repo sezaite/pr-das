@@ -29,11 +29,12 @@
                         <small class="form-text text-muted">Years of experience</small>
                       </div>
                       <div>
+                      <div class="form-group">
                       <label>Joined</label>
                         <input type="number" class="form-control" name="member_year" value="{{old('member_year')}}">
                         <small class="form-text text-muted">Member since</small>
                       </div>
-                      <div class="form-group reservoir">
+                      <div class="form-group author">
                         <label>Reservoir</label>
                       <select name="reservoir_id">
                       @foreach ($reservoirs as $reservoir)

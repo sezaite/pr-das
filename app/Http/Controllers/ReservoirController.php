@@ -41,7 +41,7 @@ class ReservoirController extends Controller
         $validator = Validator::make($request->all(),
         [
             'reservoir_title' => ['required', 'min:3', 'max:64'],
-            'reservoir_area' => ['required', 'integer', 'min:30', 'max:6400'],
+            'reservoir_area' => ['required', 'numeric', 'min:30', 'max:6400'],
             'reservoir_about' => ['max:5000']
         ],
         [
@@ -51,7 +51,7 @@ class ReservoirController extends Controller
              'reservoir_area.min' => 'Area is too small',
              'reservoir_area.max' => 'Area is too big',
              'reservoir_area.required' => 'Area is required',
-             'reservoir_area.integer' => 'Area size must be a number',
+             'reservoir_area.numeric' => 'Area size must be a number',
              'reservoir_about.max' => 'That was long was not it?',
              
         ]

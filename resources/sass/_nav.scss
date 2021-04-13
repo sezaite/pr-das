@@ -15,7 +15,7 @@ nav {
             h3 {
                 color: $secondary-color;
                 font-family: $title-font;
-                font-size: 26px;
+                font-size: 40px;
                 width: 300px;
                 
                 line-height: 1;
@@ -40,6 +40,8 @@ nav {
                 padding: 15px 0;
                 border-top: 1px solid transparent;
                 font-size: 16px;
+                font-family: $title-font;
+                margin-bottom: 4px;
                 
 
                 .dropdown-menu {
@@ -69,6 +71,12 @@ nav {
                 }
             }
 
+            .nav-link {
+                // color: $accent-color;
+                font-family: $title-font;
+                font-size: 14px; 
+            }
+
            
             .nav-item.log {
                 border: none;
@@ -80,7 +88,7 @@ nav {
             //martyna sezaite
             a.nav-link.logged {
                 color: darken($secondary-color, 40%);
-                
+                margin-bottom: 5px;
             }
 
             .nav-item:hover .dropdown-menu {
@@ -94,6 +102,9 @@ nav {
                     padding: 10px 0;
                     margin: 0;
                     margin-top: 12px;
+                    font-family: $main-font;
+                    font-size: 12px;
+                    font-weight: 600;
                 }
 
                 .dropdown-item:hover {
@@ -115,7 +126,7 @@ nav {
         .nav-wrap{
             .navbar-left {
                 h3 {
-                    font-size: 22px;
+                    font-size: 32px;
                     padding-top: 18px;
                     letter-spacing: 1px;
                 

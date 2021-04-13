@@ -16,7 +16,7 @@
                       </div>
                       <div class="form-group">
                         <label>Surname</label>
-                        <input type="text" class="form-control" name="member_surnname" value="{{old('member_surnname', $member->surnname)}}">
+                        <input type="text" class="form-control" name="member_surname" value="{{old('member_surname', $member->surname)}}">
                         <small class="form-text text-muted">Surname of the member</small>
                       </div>
                       <div class="form-group">
@@ -54,3 +54,4 @@
        </div>
    </div>
 </div>
+@endsection
