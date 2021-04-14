@@ -16,7 +16,7 @@
                       <div class="form-group">
                         <label>Area</label>
                         <input type="text" class="form-control" name="reservoir_area" value="{{old('reservoir_area', $reservoir->area)}}">
-                        <small class="form-text text-muted">Size of the reservoir</small>
+                        <small class="form-text text-muted">Size of the reservoir in m<sup>2</sup></small>
                       </div>
                       <div class="form-group">
                       <label>About</label> <textarea name="reservoir_about">{{old('reservoir_about', $reservoir->about)}}</textarea> <small class="form-text text-muted">Short description</small></div>
