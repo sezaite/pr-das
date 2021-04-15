@@ -1,19 +1,22 @@
 @extends('layouts.app')
 
 @section('content')
-
-<div class="card" id="mod">
+<div class="container" id="mod">
+<div class="card">
     <div class="card-header">
         Warning!
     </div>
     <div class="card-body">
-        <p>Are you sure?</p>
-        <div class="form-group">
-            <form action=""></form>
+        <p style="margin: 10px 0">Are you sure?</p>
+        
+            <div class="mod-btns">
+            <button type="button" class="btn">Cancel</button>
+            <button type="button" class="btn mod-btn">Delete</button>
+       
         </div>
     </div>
 </div>
-
+</div>
 <div class="container">
    <div class="row justify-content-center">
        <div class="col-md-8">

@@ -378,6 +378,11 @@ button.btn {
   margin: 10px 25%;
 }
 
+button.btn.mod-btn {
+  color: #ad1414;
+  border: 1px solid #ad1414;
+}
+
 @media (max-width: 1000px) {
   .btn.clear {
     display: block;

@@ -50,6 +50,11 @@ button.btn {
     margin: 10px 25%;
 }
 
+button.btn.mod-btn{
+    color: rgb(173, 20, 20);
+    border: 1px solid rgb(173, 20, 20);
+}
+
 @media (max-width: 1000px) {
 .btn.clear {
     display: block;
