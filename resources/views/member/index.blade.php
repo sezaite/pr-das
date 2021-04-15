@@ -1,18 +1,25 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container mod" id="mod">
+<div class="container mod" id="mod" style="display: none">
 <div class="card">
     <div class="card-header">
         Warning!
     </div>
     <div class="card-body">
-        <p style="margin: 10px 0">Are you sure?</p>
+        <p style="margin: 10px 0">
         
-            <div class="mod-btns">
-            <button type="button" class="btn">Cancel</button>
-            <button type="button" class="btn btn-delete">Delete</button>
-       
+        </p>
+        <div class="mod-btns">
+            <form action="{{route('member.destroy')}}" name="member_id" method=
+            "POST" class="destroy">
+            @csrf
+            <button type="submit" class="btn btn-delete">Delete</button>
+            </form >
+
+            <form action="">
+                <button type="button" class="btn">Cancel</button>
+            </form>
         </div>
     </div>
 </div>
@@ -41,7 +48,7 @@
                 <p class="list-item-name"><span class="highlighted-main-name">{{$member->name}} {{$member->surname}}</span>
                       <span style="display: block">Location: <span class="highlighted-name">{{$member->memberReservoir->title}}</span></p>
                   <a href="{{route('member.edit', [$member])}}" class="btn">EDIT</a>
-                  <form method="POST" data-member-id={{$member->id}} action="{{route('member.destroy', [$member])}}">
+                  <form method="POST" data-delete-member data-member-id={{$member->id}} action="">
                    @csrf
                    <button type="submit" class="btn btn-delete">DELETE</button>
                   </form></li>

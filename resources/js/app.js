@@ -6,13 +6,14 @@
 
 require('./bootstrap');
 
-if (document.querySelector('.book-delete')) {
-    document.querySelectorAll('.book-delete').forEach(form => {
+if (document.querySelector('[data-delete-member]')) {
+    document.querySelectorAll('[data-delete-member]').forEach(form => {
         form.addEventListener('submit', e => {
-
             document.querySelector('#mod').style.display = 'block';
-            document.querySelector('#mod').innerHTML = "Do you really want to delete member nr. " + form.dataset.memberId;
-
+            document.querySelector('#mod p').innerText = "Do you really want to delete member ID nr. " + form.dataset.memberId + "?";
+            let att = document.createAttribute("value");
+            att.value = form.dataset.memberId;
+            document.querySelector('#mod form.destroy').setAttributeNode(att);
             const answer = false;
             if (answer) {
                 return true;

@@ -1,19 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container mod" id="mod">
+<div class="container mod" style="display: none" id="mod">
     <div class="card">
         <div class="card-header">
             Warning!
         </div>
         <div class="card-body">
-            <p style="margin: 10px 0">Are you sure?</p>
-            
+            <p style="margin: 10px 0"></p>
                 <div class="mod-btns">
                 <button type="button" class="btn">Cancel</button>
                 <button type="button" class="btn btn-delete">Delete</button>
-           
-            </div>
+                </div>
         </div>
     </div>
     </div>
@@ -31,8 +29,8 @@
                     <span style="display: block">Size: 
                     <span class="highlighted-name">{{$reservoir->area}} m<sup class="highlighted-name">2</sup>.</span></span>
                 </p>
-                  <a href="{{route('reservoir.edit', [$reservoir])}}" class="btn">EDIT</a>
-                  <form method="POST" action="{{route('reservoir.destroy', [$reservoir])}}">
+                  <a href="" class="btn">EDIT</a>
+                  <form method="POST" class = "book-deleted" action="{{route('reservoir.destroy', [$reservoir])}}">
                    @csrf
                    <button type="submit" class="btn btn-delete">DELETE</button>
                   </form></li>

@@ -29,7 +29,7 @@ Route::group(['prefix' => 'members'], function(){
     Route::post('store', [MemberController::class, 'store'])->name('member.store');
     Route::get('edit/{member}', [MemberController::class, 'edit'])->name('member.edit');
     Route::post('update/{member}', [MemberController::class, 'update'])->name('member.update');
-    Route::post('delete/{member}', [MemberController::class, 'destroy'])->name('member.destroy');
+    Route::post('delete', [MemberController::class, 'destroy'])->name('member.destroy');
     Route::get('show/{member}', [MemberController::class, 'show'])->name('member.show');
  });
 

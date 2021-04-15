@@ -172,8 +172,9 @@ class MemberController extends Controller
      * @param  \App\Models\Member  $member
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Member $member)
+    public function destroy(Request $request)
     {
+        $member = Member::where('id', $request->member_id)->first(); 
         $member->delete();
         return redirect()->route('member.index')->with('success_message', 'Member deleted successfully');
 

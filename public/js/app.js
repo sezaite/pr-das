@@ -1847,11 +1847,14 @@ module.exports = {
  */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-if (document.querySelector('.book-delete')) {
-  document.querySelectorAll('.book-delete').forEach(function (form) {
+if (document.querySelector('[data-delete-member]')) {
+  document.querySelectorAll('[data-delete-member]').forEach(function (form) {
     form.addEventListener('submit', function (e) {
       document.querySelector('#mod').style.display = 'block';
-      document.querySelector('#mod').innerHTML = "Do you really want to delete member nr. " + form.dataset.memberId;
+      document.querySelector('#mod p').innerText = "Do you really want to delete member ID nr. " + form.dataset.memberId + "?";
+      var att = document.createAttribute("value");
+      att.value = form.dataset.memberId;
+      document.querySelector('#mod form.destroy').setAttributeNode(att);
       var answer = false;
 
       if (answer) {
