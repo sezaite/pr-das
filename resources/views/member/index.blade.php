@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container" id="mod">
+<div class="container mod" id="mod">
 <div class="card">
     <div class="card-header">
         Warning!
@@ -11,7 +11,7 @@
         
             <div class="mod-btns">
             <button type="button" class="btn">Cancel</button>
-            <button type="button" class="btn mod-btn">Delete</button>
+            <button type="button" class="btn btn-delete">Delete</button>
        
         </div>
     </div>
@@ -43,7 +43,7 @@
                   <a href="{{route('member.edit', [$member])}}" class="btn">EDIT</a>
                   <form method="POST" data-member-id={{$member->id}} action="{{route('member.destroy', [$member])}}">
                    @csrf
-                   <button type="submit" class="btn">DELETE</button>
+                   <button type="submit" class="btn btn-delete">DELETE</button>
                   </form></li>
                 </ul>
                 @endforeach

@@ -1,6 +1,22 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="container mod" id="mod">
+    <div class="card">
+        <div class="card-header">
+            Warning!
+        </div>
+        <div class="card-body">
+            <p style="margin: 10px 0">Are you sure?</p>
+            
+                <div class="mod-btns">
+                <button type="button" class="btn">Cancel</button>
+                <button type="button" class="btn btn-delete">Delete</button>
+           
+            </div>
+        </div>
+    </div>
+    </div>
 <div class="container">
    <div class="row justify-content-center">
        <div class="col-md-8">
@@ -18,7 +34,7 @@
                   <a href="{{route('reservoir.edit', [$reservoir])}}" class="btn">EDIT</a>
                   <form method="POST" action="{{route('reservoir.destroy', [$reservoir])}}">
                    @csrf
-                   <button type="submit" class="btn">DELETE</button>
+                   <button type="submit" class="btn btn-delete">DELETE</button>
                   </form></li>
                 </ul>
                 @endforeach

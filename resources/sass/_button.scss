@@ -50,9 +50,9 @@ button.btn {
     margin: 10px 25%;
 }
 
-button.btn.mod-btn{
-    color: rgb(173, 20, 20);
-    border: 1px solid rgb(173, 20, 20);
+button.btn.btn-delete{
+    color: $danger-color;
+    border: 1px solid $danger-color;
 }
 
 @media (max-width: 1000px) {

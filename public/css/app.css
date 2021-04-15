@@ -293,6 +293,14 @@ nav .nav-wrap ul.navbar-right .nav-item:hover .dropdown-menu .dropdown-item:firs
   padding-top: 10px;
 }
 
+.mod .card {
+  margin-bottom: 20px;
+}
+
+.mod .card .card-header {
+  color: #9b1616;
+}
+
 @media (max-width: 1000px) {
   .card {
     width: 400px !important;
@@ -378,9 +386,9 @@ button.btn {
   margin: 10px 25%;
 }
 
-button.btn.mod-btn {
-  color: #ad1414;
-  border: 1px solid #ad1414;
+button.btn.btn-delete {
+  color: #9b1616;
+  border: 1px solid #9b1616;
 }
 
 @media (max-width: 1000px) {
