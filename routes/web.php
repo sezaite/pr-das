@@ -20,7 +20,7 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
+Route::middleware(['auth'])->group(function (){
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::group(['prefix' => 'members'], function(){
@@ -41,4 +41,6 @@ Route::group(['prefix' => 'members'], function(){
     Route::post('update/{reservoir}', [ReservoirController::class, 'update'])->name('reservoir.update');
     Route::post('delete/{reservoir}', [ReservoirController::class, 'destroy'])->name('reservoir.destroy');
     Route::get('show/{reservoir}', [ReservoirController::class, 'show'])->name('reservoir.show');
+    Route::get('list', [ReservoirController::class, 'getList'])->name('reservoir.list');
  });
+});

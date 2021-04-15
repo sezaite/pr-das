@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container mod" id="mod" style="display: none">
+{{-- <div class="container mod" id="mod" style="display: none">
 <div class="card">
     <div class="card-header">
         Warning!
@@ -23,7 +23,7 @@
         </div>
     </div>
 </div>
-</div>
+</div> --}}
 <div class="container">
    <div class="row justify-content-center">
        <div class="col-md-8">
@@ -42,18 +42,7 @@
                  <a href="{{route('member.index')}}" class="btn clear">Clear</a>
              </div>
          </form>
-                <ul>
-                @foreach ($members as $member)
-                <li class="list-item">
-                <p class="list-item-name"><span class="highlighted-main-name">{{$member->name}} {{$member->surname}}</span>
-                      <span style="display: block">Location: <span class="highlighted-name">{{$member->memberReservoir->title}}</span></p>
-                  <a href="{{route('member.edit', [$member])}}" class="btn">EDIT</a>
-                  <form method="POST" data-delete-member data-member-id={{$member->id}} action="">
-                   @csrf
-                   <button type="submit" class="btn btn-delete">DELETE</button>
-                  </form></li>
-                </ul>
-                @endforeach
+              s
                </div>
            </div>
        </div>
